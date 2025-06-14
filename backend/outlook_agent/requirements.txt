@@ -1,0 +1,7 @@
+msal==1.25.0
+msgraph-core==0.2.2
+azure-identity==1.15.0
+python-dotenv==1.0.0
+openai
+pydantic==2.6.1 
+dotenv
