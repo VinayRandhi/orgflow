@@ -41,6 +41,9 @@ yarn-error.log*
 next-env.d.ts
 test.ipynb
 FAQs.pdf
+lightrag.log
+rag_storage
+
 
 node_modules/
 Screens/node_modules/

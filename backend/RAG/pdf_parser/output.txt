@@ -1,0 +1,317 @@
+=== Page 1 ===
+[HEADER] Level: H1 Text: Frequently Asked Questions
+
+[CONTENT] With the intention of providing more clarity on different practices and policies of Technovert to all the employees, this document has been designed and is expected to be referred as a firsthand document for clarity on the following domains:
+A. ATTENDANCE 
+B. LEAVE 
+C. PAYROLL 
+D. INSURANCE 
+E. ID CARDS 
+F. MEAL CARDS 
+G. ONBOARDING 
+H. TIMESHEETS 
+I. GENERAL QUERIES 
+J. EMPLOYEE RELIEVING
+
+[HEADER] Level: H2 Text: A. ATTENDANCE
+
+[LIST] 
+1. What is my attendance tracking policy?
+    - Your attendance tracking policy will give you information on late arrival, work hours, missing swipes. You can refer to it at this link, https://technovert.keka.com/#/me/attendance
+      
+2. I have missed my swipe, can HR or my manager adjust it?
+    - You can find the attendance tracking policy, for the number of missing swipes you are eligible for in a week. Beyond that limit, you cannot regularize the missing swipes and for HR to adjust it, you need to seek approval from your manager, and then the HR manager can adjust it accordingly.
+      
+3. What is the attendance cycle?
+    - The attendance cycle is same as payroll cycle and starts from Previous month’s 26th to current month’s 25th.
+
+4. What is the last day to get the leave days regularized?
+    - Since the payroll cycle is same as attendance cycle and salary processing starts by 27th, you have to get all the approvals and missing swipes adjusted before 27th.
+
+5. How are Work from Home requests approved?
+    - The Work from Home requests get automatically approved in the Keka portal after an employee applies them. However, if you face any issues please contact the HR team immediately.
+
+6. How to record my attendance if I go to Keka office?
+    - In a case when you are visiting Keka on a frequent basis, you can request your manager to add you to Keka attendance tracking policy or if it is on adhoc/rare basis then you can accordingly request the HR to adjust them for the day. 
+
+[FIGURE] Technovert logo at the top right corner with the text: "TECHNOVERT, TECHIE BY NATURE".
+
+=== Page 2 ===
+[HEADER] Level: H1 Text: TECHNOVERTH TECHIE BY NATURE
+
+[CONTENT] 
+7. What is the Week-off policy for trainees?
+
+For all the trainees the training period is for 6 months, and it might get extended to a max of 3 months until which the week-offs will be restricted to only Sundays. Once confirmed they can avail Saturday & Sunday as weekly off. You can check what has been allotted to you by going to Assigned Timings section in [https://technovert.keka.com/#/me/attendance](https://technovert.keka.com/#/me/attendance)
+
+8. What if I arrive late to office?
+
+As per your attendance tracking policy, you can check the grace period and late arrival penalty. [https://technovert.keka.com/#/me/attendance](https://technovert.keka.com/#/me/attendance)
+
+[HEADER] Level: H2 Text: B. LEAVE
+
+11. What is my leave policy & leave accrual policy?
+
+The leave policy can be checked at [https://technovert.keka.com/#/me/leaves](https://technovert.keka.com/#/me/leaves). By clicking on “Leave Policy Explanation” in the leaves section, you can see the accrual, application restrictions, leave restrictions, leave lapse etc.
+
+12. What is the policy of work from home? How many am I eligible for?
+
+Work from Home can be availed by all the employees apart from freshers or anyone with <2.5 years experience. In case you are eligible there will be a button that pops to the right of the screen in Attendance section [https://technovert.keka.com/#/me/attendance](https://technovert.keka.com/#/me/attendance). By default, WFH is eligible to be availed twice a month.
+
+13. My Salary did not get credited?
+
+There are couple of reasons why your salary did not get credited, like,
+
+[LIST] 
+a. You haven’t submitted your bank details in KEKA  
+b. The details are not verified by HR  
+c. The bank account is not activated  
+d. You provided incorrect details  
+
+Please talk to HR to know the exact reason, and to address the issue
+
+14. How many missing swipes & late arrivals are allowed in a month?
+
+The Missing swipes and late arrivals are mentioned exclusively in your Attendance Tracking Policy, it can be checked in the below link. [https://technovert.keka.com/#/me/attendance](https://technovert.keka.com/#/me/attendance).
+
+15. My leave got deducted due to exceeding missing swipes? What should I do?
+
+In case you have missed your swipes due to fault in the attendance machine, it will be automatically adjusted by machine reset.
+
+In case it is because you have forgotten to swipe, then you can regularize yourself to the number of times as indicated in the attendance tracking policy assigned to you, beyond this you need to get in touch with your HR. 
+
+[FIGURE] Description: Logo image at the top right corner of the page featuring "TECHNOVERTH TECHIE BY NATURE."
+
+=== Page 3 ===
+[LIST] 
+1. Items:
+   - 16. My leave got deducted due to exceeding late arrivals? What should I do?
+   - 17. Can I change my leave type?
+   - 18. I need an emergency leave, but do not have leave balance, what to do?
+
+[CONTENT] 
+- In this case you need to drop a mail to your reporting manager, who will approve/reject your request, on basis of which HR can adjust the attendance records.
+  
+- You can change your leave type any time before it is approved, and it cannot be done post that. You need to drop a mail to your reporting manager and HR to get it done.
+
+- In such cases keep your manager informed on the number of days and the purpose of the leave, so that adequate planning can be done within the team.
+
+[HEADER] Level: H1 Text: C. PAYROLL
+
+[LIST]
+1. Items:
+   - 19. What is the payroll cycle? (Salary effective date to be included)
+   - 20. Who handles payroll/tax related issues?
+
+[CONTENT] 
+- The payroll cycle is between 26th of the previous month to 25th of the current month.
+
+- Our Finance representative will be the single point of contact for these issues. <indiapayroll@technovert.com>
+
+[LIST]
+1. Items:
+   - 21. Where should I check my payslip?
+   - 22. My pay has got increased but it didn’t reflect in my pay slip or the salary for the month. Why?
+   - 23. My pay slip shows a different amount from what is paid. What could be the reason?
+   - 24. Where should I declare my tax declarations?
+   - 25. How to claim reimbursement?
+
+[CONTENT] 
+- You can check your payslip here https://technovert.keka.com/#/finances/mypay/payslips
+  
+- This is a rare case of inconvenience, but it might be because of a couple of reasons like,
+  a. The input was not acknowledged by the Finance representative
+  b. The effective date of the pay is changed Connect
+  to your HR to know the exact reason of the issue.
+  
+- This usually happens in the cases of Appraisal, where in the effective date of payment can be anywhere in the mid of the payroll cycle. You can check the effective date of revised pay at https://technovert.keka.com/#/finances/mypay/salary
+
+- You can declare your taxes under “Manage Tax” section in the below link. https://technovert.keka.com/#/finances/summary
+  
+- You can claim for reimbursement under the “Standard Expense Policy”. Check this under Time & Attendance tab by going to Job section of your profile. https://technovert.keka.com/#/me/job
+
+=== Page 4 ===
+[HEADER] Level: H3 Text: What is the maximum limit for reimbursements?
+
+[CONTENT] The limit for reimbursements differs for each category:  
+a. **Business Travel** – The per diem allowance is a daily allowance for your business travel expenses. It includes lodging, meals, and incidentals.  
+b. **Relocation Expenses** – This includes travel/accommodation expenses during relocation, as a part of your onboarding expense.
+
+Please refer to the Travel Policy Document for more info.
+
+[HEADER] Level: H3 Text: I need form 16. Where can I download it from?
+
+[CONTENT] You need to drop a mail to Finance Executive, as for now we don’t have such feature. (check your official mail id for every FY)
+
+[HEADER] Level: H3 Text: My name is not correct in the PF account/pay slip. How to correct it?
+
+[CONTENT] The process of data correction for EPF account is completely automated, and you can do profile corrections through https://unifiedportal-mem.epfindia.gov.in/memberinterface/
+
+You can also change your mobile number, email id, DOB if you want to.
+
+Name in the pay slip is in the format of <FirstName> <Last Name> as mentioned in your KEKA Profile, if you wish to change contact Finance Rep.
+
+[HEADER] Level: H3 Text: Where can I find my UAN number?
+
+[CONTENT] You can check your UAN and PF number on your pay slip that gets generated after salary credit each month.
+
+[HEADER] Level: H2 Text: INSURANCE
+
+[HEADER] Level: H3 Text: What is the medical insurance policy?
+
+[CONTENT] Please find the policy in the link hereby, https://technovert.keka.com/#/employees/documents/organization
+
+The scheme provides coverage for self, spouse, and 2 kids. For further details get in touch with your HR.
+
+[HEADER] Level: H3 Text: My/My family insurance details are updated but I didn’t receive any Health Insurance Card. When can I expect?
+
+[CONTENT] The health insurance provider will require 30-45 days of time to provide the Health Insurance Cards, however an E card can be provided immediately.
+
+For further details get in touch with your HR.
+
+[HEADER] Level: H3 Text: I have some hospitalization/medical charges to be covered for me/my family, how should I claim insurance for the same?
+
+[CONTENT] For understanding the claim submissions, please visit https://technovert.keka.com/#/employees/documents/organization
+
+=== Page 5 ===
+[HEADER] Level: H3 Text: How should I register a new family member for the Insurance policy?
+[CONTENT] In case you are newly married or have newborns in your family then you must report the same immediately to HR to include their details for the Health Insurance Policy to, else it will be postponed till the next FY.
+
+[HEADER] Level: H3 Text: Who all are eligible for coverage under Medical Insurance Policy?
+[CONTENT] Please go through the policy guidelines in the link hereby, https://technovert.teka.com/#/employees/documents/organization
+
+[HEADER] Level: H3 Text: What is the amount to be paid for Medical Insurance?
+[CONTENT] It is a company sponsored Health Insurance Policy, hence your out-of-pocket cost remains zero.
+
+[HEADER] Level: H3 Text: Can I extend my insurance benefit to my parents?
+[CONTENT] Currently it is a Group policy with 1+3 coverage (self + spouse & 2 kids) hence benefits cannot be extended to parents.
+
+[HEADER] Level: H3 Text: Can I extend the coverage amount of my medical insurance?
+[CONTENT] Yes, based on your designation and approval from Management, you can drop a request with the HR in that case for more information.
+
+[HEADER] Level: H3 Text: ID CARDS
+[HEADER] Level: H3 Text: My card is not registering attendance, how to resolve this issue?
+[CONTENT] There are couple of reasons for this issue to come up
+[LIST] 
+- Problem with the machine 
+- Card deactivated
+[CONTENT] Please notify both IT admin and HR to resolve the issue.
+
+[HEADER] Level: H3 Text: What to be done If I lose/misplace/forget my id card?
+[CONTENT] In this case, please follow the procedure as indicated in the below link https://technovert.teka.com/#/employees/documents/organization
+
+[HEADER] Level: H3 Text: What is the card reissuance fees?
+[CONTENT] In case of loss of ID card, you need to pay a reissuance fees of INR 200/-.
+
+[HEADER] Level: H3 Text: MEAL CARDS
+[HEADER] Level: H3 Text: I am unable to access my meal card. What could be the reason?
+[CONTENT] This might be because of no balance, or the merchant is not registered with the meal card service provider.
+
+[HEADER] Level: H3 Text: I have exceeded my limit in the Meal Card Balance. What should I do?
+[CONTENT] The maximum limit in the meal card is 10,000/- beyond which the credit would be rejected because of
+
+=== Page 6 ===
+[HEADER] Level: H1 Text: G. ONBOARDING
+
+[CONTENT] 
+43. I want to change the meal card balance. Whom should I inform?
+In such instances you need to inform Finance & HR reps which will reflect from the following payroll cycle.
+
+[HEADER] Level: H2 Text: 44. By when should I complete the profile information in Keka?
+
+[CONTENT]
+Please update your profile within a week of joining.
+
+[HEADER] Level: H2 Text: 45. I am unable to upload documents in Keka.
+
+[CONTENT]
+You will face this issue in case you have already uploaded one and trying to reupload to rewrite the existing file. Kindly ask your HR to delete the existing one, so that you can upload it afresh.
+
+[HEADER] Level: H2 Text: 46. I am unable to edit the documents I have updated in Keka.
+
+[CONTENT]
+You can edit the documents only until verification. Once the document is verified by HR, you cannot upload another document in its place. For this, please ask your HR to delete it, stating a relevant reason and you can upload post that.
+
+[HEADER] Level: H2 Text: 47. Where should I upload my bank details for salary credit?
+
+[CONTENT]
+You have to upload the “First page of the cheque book” after your account is created with our registered bank partners, by going to Payroll KYC tab in this link https://technovert.keka.com/#/employees/documents/organization
+
+[HEADER] Level: H2 Text: 48. How should I claim my travel and accommodation expenses at the time of joining/or any other business travel?
+
+[CONTENT]
+In this case, ask your HR to assign you an expense policy.
+
+[HEADER] Level: H2 Text: 49. I haven’t received my ID card. When will I receive it?
+
+[CONTENT]
+Processing ID card is not inhouse and the vendor takes min of 10-15 days to process the cards. Your HR will keep you posted on this.
+
+[HEADER] Level: H1 Text: H. TIMESHEETS
+
+[HEADER] Level: H2 Text: 50. What is the purpose of timesheets?
+
+[CONTENT]
+This is to track the time spent by employee on several tasks assigned to him.
+
+[HEADER] Level: H2 Text: 51. Where should I check my timesheets?
+
+[CONTENT]
+You can check that in this link -> https://technovert.keka.com/#/me/timesheets/all 
+
+[FIGURE] There is a logo and branding for “TECHNODVERT Techie by Nature” at the top right of the page.
+
+=== Page 7 ===
+[HEADER] Level: H1 Text: GENERAL INQUIRIES
+
+[CONTENT] 
+54. What is the preferred mode of communication?
+Microsoft Teams is preferred, however for official and confidential communication we recommend using Microsoft Outlook to better organize your work and have healthy work discussions.
+
+55. Can I take loan for personal purposes? If so, what is the loan issue and repayment policy?
+For employees’ benefit you have the provision of availing loan at 0% interest. For the guidelines on availing and repaying, please refer to this annexure.
+https://technovert.keka.com/#/employees/documents/organization
+
+[HEADER] Level: H1 Text: EMPLOYEE RELIEVING
+
+[CONTENT] 
+56. How should I submit my resignation & what formalities should I perform?
+You can drop your resignation over mail to your reporting manager, marking HR and Department Head in CC. Further formalities will be reverted over the same mail from the HR. 
+
+57. What is my notice period?
+Notice Period for your role will be as per the Terms & Conditions mentioned in your Appointment Letter.
+
+58. What documents will I be receiving as part of my Full & Final Settlement?
+Post your relieving from the services of Technovert, you will receive the following documents.
+
+[LIST] 
+a) Relieving & Experience Letter
+b) Full & Final statement
+c) Form 16 & Form 12BB
+
+[CONTENT] 
+59. What will my Relieving/Experience certificate consist of?
+This document indicates your,
+
+[LIST] 
+a) Basic Employment details (Name, Emp Id, DOJ, Designation)
+b) No. of years of service
+c) Relieving Date
+
+[CONTENT] 
+60. When will I get my Full & Final pay?
+Your F&F settlements start once all the assets are procured and after clearing any outstanding loans. You would be getting this typically in the end of payroll cycle you have exited.
+
+=== Page 8 ===
+[CONTENT] 
+61. When will I get my Relieving documents & Form 16?
+Relieving documents will be couriered to you 2 weeks from the “Last working date”. Form 16 will be mailed in the month of June in the upcoming Financial year. E.g. if your relieving is in Jan 2019, you’ll get your Form 16 by June 2019.
+
+62. How can I avail my Leave in notice period?
+You will not be allowed to take anymore Privileged Leave; however, you can consume the pending Sick/Casual Leave.
+
+63. What is the knowledge transfer plan?
+Post confirmation of your resignation, your manager will inform you on the Knowledge Transfer schedule to your successor. 
+
+[FIGURE] A logo or branding image in the top right corner with the text: "TECHNDOVERT TECHIE BY NATURE"
+

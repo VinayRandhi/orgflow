@@ -1,0 +1,64 @@
+2025-06-15 13:40:06,405 - INFO - Initializing PDFParserRAG with model: gpt-4o
+2025-06-15 13:40:06,417 - INFO - Starting PDF processing example
+2025-06-15 13:40:06,417 - INFO - Starting PDF processing: path/to/your/pdf
+2025-06-15 13:40:06,417 - ERROR - Error processing PDF path/to/your/pdf after 0.00 seconds: [Errno 2] No such file or directory: 'path/to/your/pdf'
+2025-06-15 13:40:06,417 - INFO - Saving 0 chunks to output.txt
+2025-06-15 13:40:06,417 - INFO - Chunks saved successfully in 0.00 seconds
+2025-06-15 13:40:06,417 - INFO - PDF processing example completed
+2025-06-15 13:40:40,759 - INFO - Initializing PDFParserRAG with model: gpt-4o
+2025-06-15 13:40:40,771 - INFO - Starting PDF processing example
+2025-06-15 13:40:40,771 - INFO - Starting PDF processing: pdf_parser/FAQs.pdf
+2025-06-15 13:40:40,772 - ERROR - Error processing PDF pdf_parser/FAQs.pdf after 0.00 seconds: [Errno 2] No such file or directory: 'pdf_parser/FAQs.pdf'
+2025-06-15 13:40:40,772 - INFO - Saving 0 chunks to output.txt
+2025-06-15 13:40:40,772 - INFO - Chunks saved successfully in 0.00 seconds
+2025-06-15 13:40:40,772 - INFO - PDF processing example completed
+2025-06-15 13:40:57,332 - INFO - Initializing PDFParserRAG with model: gpt-4o
+2025-06-15 13:40:57,343 - INFO - Starting PDF processing example
+2025-06-15 13:40:57,343 - INFO - Starting PDF processing: FAQs.pdf
+2025-06-15 13:40:57,348 - INFO - PDF opened successfully. Total pages: 8
+2025-06-15 13:40:57,348 - INFO - Starting concurrent processing with 4 workers
+2025-06-15 13:40:57,968 - INFO - Processing page 1
+2025-06-15 13:40:59,894 - INFO - Sending page 1 to GPT-4 Vision model
+2025-06-15 13:40:59,902 - INFO - Processing page 2
+2025-06-15 13:41:01,928 - INFO - Sending page 2 to GPT-4 Vision model
+2025-06-15 13:41:01,940 - INFO - Processing page 3
+2025-06-15 13:41:03,920 - INFO - Sending page 3 to GPT-4 Vision model
+2025-06-15 13:41:03,930 - INFO - Processing page 4
+2025-06-15 13:41:05,892 - INFO - Sending page 4 to GPT-4 Vision model
+2025-06-15 13:41:05,902 - INFO - Processing page 5
+2025-06-15 13:41:07,838 - INFO - Sending page 5 to GPT-4 Vision model
+2025-06-15 13:41:07,847 - INFO - Processing page 6
+2025-06-15 13:41:09,777 - INFO - Sending page 6 to GPT-4 Vision model
+2025-06-15 13:41:09,786 - INFO - Processing page 7
+2025-06-15 13:41:09,937 - INFO - HTTP Request: POST https://vin-openai-instance.openai.azure.com//openai/deployments/gpt-4o/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-06-15 13:41:11,757 - INFO - Sending page 7 to GPT-4 Vision model
+2025-06-15 13:41:11,757 - INFO - Processing page 8
+2025-06-15 13:41:11,925 - INFO - HTTP Request: POST https://vin-openai-instance.openai.azure.com//openai/deployments/gpt-4o/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-06-15 13:41:12,250 - INFO - HTTP Request: POST https://vin-openai-instance.openai.azure.com//openai/deployments/gpt-4o/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 429 Too Many Requests"
+2025-06-15 13:41:12,250 - INFO - Retrying request to /chat/completions in 51.000000 seconds
+2025-06-15 13:41:13,107 - INFO - HTTP Request: POST https://vin-openai-instance.openai.azure.com//openai/deployments/gpt-4o/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 429 Too Many Requests"
+2025-06-15 13:41:13,107 - INFO - Retrying request to /chat/completions in 50.000000 seconds
+2025-06-15 13:41:13,504 - INFO - Sending page 8 to GPT-4 Vision model
+2025-06-15 13:41:13,511 - INFO - Page 1 processed successfully in 15.54 seconds
+2025-06-15 13:41:13,515 - INFO - Page 2 processed successfully in 13.61 seconds
+2025-06-15 13:41:13,783 - INFO - HTTP Request: POST https://vin-openai-instance.openai.azure.com//openai/deployments/gpt-4o/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 429 Too Many Requests"
+2025-06-15 13:41:13,784 - INFO - Retrying request to /chat/completions in 49.000000 seconds
+2025-06-15 13:41:16,484 - INFO - HTTP Request: POST https://vin-openai-instance.openai.azure.com//openai/deployments/gpt-4o/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-06-15 13:41:16,488 - INFO - Page 3 processed successfully in 14.55 seconds
+2025-06-15 13:41:16,798 - INFO - HTTP Request: POST https://vin-openai-instance.openai.azure.com//openai/deployments/gpt-4o/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-06-15 13:41:16,802 - INFO - Page 4 processed successfully in 12.87 seconds
+2025-06-15 13:41:18,945 - INFO - HTTP Request: POST https://vin-openai-instance.openai.azure.com//openai/deployments/gpt-4o/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-06-15 13:41:18,950 - INFO - Page 5 processed successfully in 13.05 seconds
+2025-06-15 13:42:05,788 - INFO - HTTP Request: POST https://vin-openai-instance.openai.azure.com//openai/deployments/gpt-4o/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 429 Too Many Requests"
+2025-06-15 13:42:05,793 - INFO - Retrying request to /chat/completions in 2.000000 seconds
+2025-06-15 13:42:10,353 - INFO - HTTP Request: POST https://vin-openai-instance.openai.azure.com//openai/deployments/gpt-4o/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-06-15 13:42:10,358 - INFO - Page 8 processed successfully in 58.60 seconds
+2025-06-15 13:42:13,535 - INFO - HTTP Request: POST https://vin-openai-instance.openai.azure.com//openai/deployments/gpt-4o/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-06-15 13:42:13,538 - INFO - Page 6 processed successfully in 65.69 seconds
+2025-06-15 13:42:13,539 - INFO - HTTP Request: POST https://vin-openai-instance.openai.azure.com//openai/deployments/gpt-4o/chat/completions?api-version=2024-12-01-preview "HTTP/1.1 200 OK"
+2025-06-15 13:42:13,555 - INFO - Page 7 processed successfully in 63.77 seconds
+2025-06-15 13:42:13,566 - INFO - PDF processing completed in 76.22 seconds
+2025-06-15 13:42:13,566 - INFO - Successfully processed 8 out of 8 pages
+2025-06-15 13:42:13,569 - INFO - Saving 8 chunks to output.txt
+2025-06-15 13:42:13,570 - INFO - Chunks saved successfully in 0.00 seconds
+2025-06-15 13:42:13,570 - INFO - PDF processing example completed

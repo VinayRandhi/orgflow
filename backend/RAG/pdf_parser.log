@@ -1,0 +1,285 @@
+2025-06-15 14:18:36,709 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_entities.json'} 0 data
+2025-06-15 14:18:36,710 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_relationships.json'} 0 data
+2025-06-15 14:18:36,711 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_chunks.json'} 0 data
+2025-06-15 14:18:36,714 - INFO - Initializing PDFParserRAG with model: gpt-4o
+2025-06-15 14:18:36,723 - INFO - Starting PDF processing: ./FAQs.pdf
+2025-06-15 14:18:36,728 - INFO - PDF opened successfully. Total pages: 8
+2025-06-15 14:18:36,728 - INFO - Starting concurrent processing with 4 workers
+2025-06-15 14:18:37,372 - INFO - Processing page 1
+2025-06-15 14:18:39,319 - INFO - Sending page 1 to GPT-4 Vision model
+2025-06-15 14:18:39,332 - INFO - Processing page 2
+2025-06-15 14:18:41,295 - INFO - Sending page 2 to GPT-4 Vision model
+2025-06-15 14:18:41,306 - INFO - Processing page 3
+2025-06-15 14:18:43,280 - INFO - Sending page 3 to GPT-4 Vision model
+2025-06-15 14:18:43,290 - INFO - Processing page 4
+2025-06-15 14:18:45,254 - INFO - Sending page 4 to GPT-4 Vision model
+2025-06-15 14:18:45,267 - INFO - Processing page 5
+2025-06-15 14:18:47,238 - INFO - Sending page 5 to GPT-4 Vision model
+2025-06-15 14:18:47,246 - INFO - Processing page 6
+2025-06-15 14:18:49,164 - INFO - Sending page 6 to GPT-4 Vision model
+2025-06-15 14:18:49,172 - INFO - Processing page 7
+2025-06-15 14:18:51,145 - INFO - Sending page 7 to GPT-4 Vision model
+2025-06-15 14:18:51,146 - INFO - Processing page 8
+2025-06-15 14:18:51,648 - INFO - Retrying request to /chat/completions in 51.000000 seconds
+2025-06-15 14:18:52,579 - INFO - Retrying request to /chat/completions in 50.000000 seconds
+2025-06-15 14:18:52,954 - INFO - Sending page 8 to GPT-4 Vision model
+2025-06-15 14:18:52,963 - INFO - Page 1 processed successfully in 15.59 seconds
+2025-06-15 14:18:53,244 - INFO - Retrying request to /chat/completions in 49.000000 seconds
+2025-06-15 14:18:54,747 - INFO - Page 2 processed successfully in 15.41 seconds
+2025-06-15 14:18:56,179 - INFO - Page 3 processed successfully in 14.87 seconds
+2025-06-15 14:18:57,206 - INFO - Page 5 processed successfully in 11.94 seconds
+2025-06-15 14:18:58,227 - INFO - Page 4 processed successfully in 14.94 seconds
+2025-06-15 14:19:45,197 - INFO - Retrying request to /chat/completions in 2.000000 seconds
+2025-06-15 14:19:49,019 - INFO - Page 8 processed successfully in 57.86 seconds
+2025-06-15 14:19:53,113 - INFO - Page 6 processed successfully in 65.86 seconds
+2025-06-15 14:19:53,963 - INFO - Page 7 processed successfully in 64.79 seconds
+2025-06-15 14:19:53,980 - INFO - PDF processing completed in 77.26 seconds
+2025-06-15 14:19:53,980 - INFO - Successfully processed 8 out of 8 pages
+2025-06-15 14:26:40,053 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_entities.json'} 0 data
+2025-06-15 14:26:40,054 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_relationships.json'} 0 data
+2025-06-15 14:26:40,054 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_chunks.json'} 0 data
+2025-06-15 14:26:40,055 - INFO - Initializing PDFParserRAG with model: gpt-4o
+2025-06-15 14:26:40,059 - INFO - Starting PDF processing: ./FAQs.pdf
+2025-06-15 14:26:40,063 - INFO - PDF opened successfully. Total pages: 8
+2025-06-15 14:26:40,063 - INFO - Starting concurrent processing with 4 workers
+2025-06-15 14:26:40,661 - INFO - Processing page 1
+2025-06-15 14:26:42,647 - INFO - Sending page 1 to GPT-4 Vision model
+2025-06-15 14:26:42,656 - INFO - Processing page 2
+2025-06-15 14:26:44,663 - INFO - Sending page 2 to GPT-4 Vision model
+2025-06-15 14:26:44,675 - INFO - Processing page 3
+2025-06-15 14:26:46,640 - INFO - Sending page 3 to GPT-4 Vision model
+2025-06-15 14:26:46,650 - INFO - Processing page 4
+2025-06-15 14:26:48,579 - INFO - Sending page 4 to GPT-4 Vision model
+2025-06-15 14:26:48,588 - INFO - Processing page 5
+2025-06-15 14:26:50,522 - INFO - Sending page 5 to GPT-4 Vision model
+2025-06-15 14:26:50,531 - INFO - Processing page 6
+2025-06-15 14:26:52,560 - INFO - Sending page 6 to GPT-4 Vision model
+2025-06-15 14:26:52,571 - INFO - Processing page 7
+2025-06-15 14:26:54,511 - INFO - Sending page 7 to GPT-4 Vision model
+2025-06-15 14:26:54,511 - INFO - Processing page 8
+2025-06-15 14:26:55,731 - INFO - Retrying request to /chat/completions in 50.000000 seconds
+2025-06-15 14:26:56,254 - INFO - Sending page 8 to GPT-4 Vision model
+2025-06-15 14:26:56,261 - INFO - Page 1 processed successfully in 15.60 seconds
+2025-06-15 14:26:56,265 - INFO - Page 2 processed successfully in 13.61 seconds
+2025-06-15 14:26:56,531 - INFO - Retrying request to /chat/completions in 49.000000 seconds
+2025-06-15 14:26:57,528 - INFO - Retrying request to /chat/completions in 49.000000 seconds
+2025-06-15 14:26:58,604 - INFO - Page 3 processed successfully in 13.93 seconds
+2025-06-15 14:27:00,668 - INFO - Page 7 processed successfully in 8.10 seconds
+2025-06-15 14:27:01,055 - INFO - Page 4 processed successfully in 14.40 seconds
+2025-06-15 14:27:49,006 - INFO - Retrying request to /chat/completions in 2.000000 seconds
+2025-06-15 14:27:51,908 - INFO - Page 8 processed successfully in 57.40 seconds
+2025-06-15 14:27:54,412 - INFO - Page 6 processed successfully in 63.88 seconds
+2025-06-15 14:27:59,682 - INFO - Page 5 processed successfully in 71.09 seconds
+2025-06-15 14:27:59,696 - INFO - PDF processing completed in 79.64 seconds
+2025-06-15 14:27:59,696 - INFO - Successfully processed 8 out of 8 pages
+2025-06-15 14:29:38,783 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_entities.json'} 0 data
+2025-06-15 14:29:38,784 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_relationships.json'} 0 data
+2025-06-15 14:29:38,784 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_chunks.json'} 0 data
+2025-06-15 14:29:38,785 - INFO - Initializing PDFParserRAG with model: gpt-4o
+2025-06-15 14:29:38,789 - INFO - Starting PDF processing: ./FAQs.pdf
+2025-06-15 14:29:38,794 - INFO - PDF opened successfully. Total pages: 8
+2025-06-15 14:29:38,794 - INFO - Starting concurrent processing with 4 workers
+2025-06-15 14:29:39,402 - INFO - Processing page 1
+2025-06-15 14:29:41,335 - INFO - Sending page 1 to GPT-4 Vision model
+2025-06-15 14:29:41,344 - INFO - Processing page 2
+2025-06-15 14:29:43,329 - INFO - Sending page 2 to GPT-4 Vision model
+2025-06-15 14:29:43,343 - INFO - Processing page 3
+2025-06-15 14:29:45,314 - INFO - Sending page 3 to GPT-4 Vision model
+2025-06-15 14:29:45,324 - INFO - Processing page 4
+2025-06-15 14:29:47,285 - INFO - Sending page 4 to GPT-4 Vision model
+2025-06-15 14:29:47,298 - INFO - Processing page 5
+2025-06-15 14:29:49,218 - INFO - Sending page 5 to GPT-4 Vision model
+2025-06-15 14:29:49,229 - INFO - Processing page 6
+2025-06-15 14:29:51,204 - INFO - Sending page 6 to GPT-4 Vision model
+2025-06-15 14:29:51,213 - INFO - Processing page 7
+2025-06-15 14:29:53,221 - INFO - Sending page 7 to GPT-4 Vision model
+2025-06-15 14:29:53,224 - INFO - Processing page 8
+2025-06-15 14:29:53,730 - INFO - Retrying request to /chat/completions in 51.000000 seconds
+2025-06-15 14:29:54,759 - INFO - Retrying request to /chat/completions in 50.000000 seconds
+2025-06-15 14:29:54,955 - INFO - Sending page 8 to GPT-4 Vision model
+2025-06-15 14:29:54,962 - INFO - Page 1 processed successfully in 15.56 seconds
+2025-06-15 14:29:55,220 - INFO - Retrying request to /chat/completions in 49.000000 seconds
+2025-06-15 14:29:55,326 - INFO - Page 3 processed successfully in 11.98 seconds
+2025-06-15 14:29:55,607 - INFO - Page 2 processed successfully in 14.26 seconds
+2025-06-15 14:29:56,782 - INFO - Page 4 processed successfully in 11.46 seconds
+2025-06-15 14:29:58,626 - INFO - Page 5 processed successfully in 11.33 seconds
+2025-06-15 14:30:47,493 - INFO - Retrying request to /chat/completions in 2.000000 seconds
+2025-06-15 14:30:50,816 - INFO - Page 8 processed successfully in 57.59 seconds
+2025-06-15 14:30:55,897 - INFO - Page 6 processed successfully in 66.67 seconds
+2025-06-15 14:30:56,152 - INFO - Page 7 processed successfully in 64.94 seconds
+2025-06-15 14:30:56,168 - INFO - PDF processing completed in 77.38 seconds
+2025-06-15 14:30:56,168 - INFO - Successfully processed 8 out of 8 pages
+2025-06-15 14:46:23,389 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_entities.json'} 0 data
+2025-06-15 14:46:23,390 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_relationships.json'} 0 data
+2025-06-15 14:46:23,390 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_chunks.json'} 0 data
+2025-06-15 14:46:23,391 - INFO - Initializing PDFParserRAG with model: gpt-4o
+2025-06-15 14:46:23,395 - INFO - Starting PDF processing: ./FAQs.pdf
+2025-06-15 14:46:23,400 - INFO - PDF opened successfully. Total pages: 8
+2025-06-15 14:46:23,400 - INFO - Starting concurrent processing with 4 workers
+2025-06-15 14:46:24,020 - INFO - Processing page 1
+2025-06-15 14:46:25,953 - INFO - Sending page 1 to GPT-4 Vision model
+2025-06-15 14:46:25,961 - INFO - Processing page 2
+2025-06-15 14:46:27,956 - INFO - Sending page 2 to GPT-4 Vision model
+2025-06-15 14:46:27,967 - INFO - Processing page 3
+2025-06-15 14:46:29,919 - INFO - Sending page 3 to GPT-4 Vision model
+2025-06-15 14:46:29,928 - INFO - Processing page 4
+2025-06-15 14:46:31,888 - INFO - Sending page 4 to GPT-4 Vision model
+2025-06-15 14:46:31,900 - INFO - Processing page 5
+2025-06-15 14:46:33,814 - INFO - Sending page 5 to GPT-4 Vision model
+2025-06-15 14:46:33,823 - INFO - Processing page 6
+2025-06-15 14:46:35,713 - INFO - Sending page 6 to GPT-4 Vision model
+2025-06-15 14:46:35,713 - INFO - Processing page 7
+2025-06-15 14:46:37,556 - INFO - Retrying request to /chat/completions in 52.000000 seconds
+2025-06-15 14:46:37,662 - INFO - Sending page 7 to GPT-4 Vision model
+2025-06-15 14:46:37,672 - INFO - Processing page 8
+2025-06-15 14:46:38,422 - INFO - Retrying request to /chat/completions in 51.000000 seconds
+2025-06-15 14:46:39,391 - INFO - Sending page 8 to GPT-4 Vision model
+2025-06-15 14:46:39,396 - INFO - Page 1 processed successfully in 15.38 seconds
+2025-06-15 14:46:39,661 - INFO - Retrying request to /chat/completions in 50.000000 seconds
+2025-06-15 14:46:40,212 - INFO - Page 2 processed successfully in 14.25 seconds
+2025-06-15 14:46:41,305 - INFO - Page 3 processed successfully in 13.34 seconds
+2025-06-15 14:46:43,386 - INFO - Page 6 processed successfully in 9.56 seconds
+2025-06-15 14:46:44,513 - INFO - Page 4 processed successfully in 14.58 seconds
+2025-06-15 14:47:32,481 - INFO - Retrying request to /chat/completions in 2.000000 seconds
+2025-06-15 14:47:36,227 - INFO - Page 8 processed successfully in 58.55 seconds
+2025-06-15 14:47:40,835 - INFO - Page 5 processed successfully in 68.93 seconds
+2025-06-15 14:47:41,756 - INFO - Page 7 processed successfully in 66.04 seconds
+2025-06-15 14:47:41,766 - INFO - PDF processing completed in 78.37 seconds
+2025-06-15 14:47:41,767 - INFO - Successfully processed 8 out of 8 pages
+2025-06-15 14:48:16,151 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_entities.json'} 0 data
+2025-06-15 14:48:16,151 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_relationships.json'} 0 data
+2025-06-15 14:48:16,151 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_chunks.json'} 0 data
+2025-06-15 14:48:16,152 - INFO - Initializing PDFParserRAG with model: gpt-4o
+2025-06-15 14:48:16,156 - INFO - Starting PDF processing: ./FAQs.pdf
+2025-06-15 14:48:16,161 - INFO - PDF opened successfully. Total pages: 8
+2025-06-15 14:48:16,162 - INFO - Starting concurrent processing with 4 workers
+2025-06-15 14:48:16,795 - INFO - Processing page 1
+2025-06-15 14:48:18,714 - INFO - Sending page 1 to GPT-4 Vision model
+2025-06-15 14:48:18,723 - INFO - Processing page 2
+2025-06-15 14:48:20,704 - INFO - Sending page 2 to GPT-4 Vision model
+2025-06-15 14:48:20,714 - INFO - Processing page 3
+2025-06-15 14:48:22,679 - INFO - Sending page 3 to GPT-4 Vision model
+2025-06-15 14:48:22,688 - INFO - Processing page 4
+2025-06-15 14:48:24,638 - INFO - Sending page 4 to GPT-4 Vision model
+2025-06-15 14:48:24,650 - INFO - Processing page 5
+2025-06-15 14:48:26,307 - INFO - Retrying request to /chat/completions in 6.000000 seconds
+2025-06-15 14:48:26,640 - INFO - Sending page 5 to GPT-4 Vision model
+2025-06-15 14:48:26,652 - INFO - Processing page 6
+2025-06-15 14:48:27,369 - INFO - Retrying request to /chat/completions in 5.000000 seconds
+2025-06-15 14:48:28,316 - INFO - Retrying request to /chat/completions in 4.000000 seconds
+2025-06-15 14:48:28,569 - INFO - Sending page 6 to GPT-4 Vision model
+2025-06-15 14:48:28,578 - INFO - Processing page 7
+2025-06-15 14:48:29,087 - INFO - Retrying request to /chat/completions in 3.000000 seconds
+2025-06-15 14:48:30,508 - INFO - Sending page 7 to GPT-4 Vision model
+2025-06-15 14:48:30,509 - INFO - Processing page 8
+2025-06-15 14:48:31,031 - INFO - Retrying request to /chat/completions in 1.000000 seconds
+2025-06-15 14:48:32,248 - INFO - Sending page 8 to GPT-4 Vision model
+2025-06-15 14:48:32,254 - INFO - Page 1 processed successfully in 15.46 seconds
+2025-06-15 14:48:32,257 - INFO - Page 2 processed successfully in 13.53 seconds
+2025-06-15 14:48:32,784 - INFO - Retrying request to /chat/completions in 3.000000 seconds
+2025-06-15 14:48:33,073 - INFO - Retrying request to /chat/completions in 3.000000 seconds
+2025-06-15 14:48:35,938 - INFO - Retrying request to /chat/completions in 46.000000 seconds
+2025-06-15 14:48:36,461 - INFO - Page 8 processed successfully in 5.95 seconds
+2025-06-15 14:48:36,505 - ERROR - Error processing page 7 after 7.93 seconds: Error code: 429 - {'error': {'code': '429', 'message': 'Requests to the ChatCompletions_Create Operation under Azure OpenAI API version 2024-12-01-preview have exceeded token rate limit of your current OpenAI S0 pricing tier. Please retry after 46 seconds. Please go here: https://aka.ms/oai/quotaincrease if you would like to further increase the default rate limit. For Free Account customers, upgrade to Pay as you Go here: https://aka.ms/429TrialUpgrade.'}}
+2025-06-15 14:48:36,621 - ERROR - Error processing page 3 after 15.91 seconds: Error code: 429 - {'error': {'code': '429', 'message': 'Requests to the ChatCompletions_Create Operation under Azure OpenAI API version 2024-12-01-preview have exceeded token rate limit of your current OpenAI S0 pricing tier. Please retry after 46 seconds. Please go here: https://aka.ms/oai/quotaincrease if you would like to further increase the default rate limit. For Free Account customers, upgrade to Pay as you Go here: https://aka.ms/429TrialUpgrade.'}}
+2025-06-15 14:48:39,407 - INFO - Page 6 processed successfully in 12.75 seconds
+2025-06-15 14:48:42,583 - INFO - Page 5 processed successfully in 17.93 seconds
+2025-06-15 14:49:33,275 - INFO - Page 4 processed successfully in 70.59 seconds
+2025-06-15 14:49:33,287 - INFO - PDF processing completed in 77.13 seconds
+2025-06-15 14:49:33,287 - INFO - Successfully processed 6 out of 8 pages
+2025-06-15 14:49:44,327 - INFO - Retrying request to /chat/completions in 52.000000 seconds
+2025-06-15 14:50:45,996 - INFO - Retrying request to /chat/completions in 52.000000 seconds
+2025-06-15 14:51:46,950 - INFO - Retrying request to /chat/completions in 53.000000 seconds
+2025-06-15 14:52:51,333 - INFO - Retrying request to /chat/completions in 51.000000 seconds
+2025-06-15 14:53:55,493 - INFO - Retrying request to /chat/completions in 49.000000 seconds
+2025-06-15 22:55:12,514 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_entities.json'} 0 data
+2025-06-15 22:55:12,515 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_relationships.json'} 0 data
+2025-06-15 22:55:12,515 - INFO - Init {'embedding_dim': 3072, 'metric': 'cosine', 'storage_file': './temp_test/vdb_chunks.json'} 0 data
+2025-06-15 22:55:12,516 - INFO - Initializing PDFParserRAG with model: gpt-4o
+2025-06-15 22:55:12,520 - INFO - Starting PDF processing: ./FAQs.pdf
+2025-06-15 22:55:12,525 - INFO - PDF opened successfully. Total pages: 8
+2025-06-15 22:55:12,525 - INFO - Starting concurrent processing with 4 workers
+2025-06-15 22:55:13,097 - INFO - Processing page 1
+2025-06-15 22:55:15,038 - INFO - Sending page 1 to GPT-4 Vision model
+2025-06-15 22:55:15,047 - INFO - Processing page 2
+2025-06-15 22:55:17,047 - INFO - Sending page 2 to GPT-4 Vision model
+2025-06-15 22:55:17,057 - INFO - Processing page 3
+2025-06-15 22:55:19,062 - INFO - Sending page 3 to GPT-4 Vision model
+2025-06-15 22:55:19,072 - INFO - Processing page 4
+2025-06-15 22:55:21,061 - INFO - Sending page 4 to GPT-4 Vision model
+2025-06-15 22:55:21,070 - INFO - Processing page 5
+2025-06-15 22:55:23,082 - INFO - Sending page 5 to GPT-4 Vision model
+2025-06-15 22:55:23,093 - INFO - Processing page 6
+2025-06-15 22:55:25,040 - INFO - Sending page 6 to GPT-4 Vision model
+2025-06-15 22:55:25,041 - INFO - Processing page 7
+2025-06-15 22:55:25,621 - INFO - Retrying request to /chat/completions in 53.000000 seconds
+2025-06-15 22:55:27,028 - INFO - Sending page 7 to GPT-4 Vision model
+2025-06-15 22:55:27,035 - INFO - Processing page 8
+2025-06-15 22:55:27,524 - INFO - Retrying request to /chat/completions in 51.000000 seconds
+2025-06-15 22:55:28,777 - INFO - Sending page 8 to GPT-4 Vision model
+2025-06-15 22:55:28,783 - INFO - Page 1 processed successfully in 15.69 seconds
+2025-06-15 22:55:29,027 - INFO - Retrying request to /chat/completions in 49.000000 seconds
+2025-06-15 22:55:30,545 - INFO - Page 2 processed successfully in 15.50 seconds
+2025-06-15 22:55:30,675 - INFO - Page 3 processed successfully in 13.62 seconds
+2025-06-15 22:55:31,511 - INFO - Page 4 processed successfully in 12.44 seconds
+2025-06-15 22:55:31,756 - INFO - Page 6 processed successfully in 8.66 seconds
+2025-06-15 22:56:24,434 - INFO - Page 8 processed successfully in 57.40 seconds
+2025-06-15 22:56:28,415 - INFO - Page 7 processed successfully in 63.37 seconds
+2025-06-15 22:56:28,668 - INFO - Page 5 processed successfully in 67.60 seconds
+2025-06-15 22:56:28,680 - INFO - PDF processing completed in 76.16 seconds
+2025-06-15 22:56:28,680 - INFO - Successfully processed 8 out of 8 pages
+2025-06-15 22:56:31,703 - INFO - Retrying request to /chat/completions in 49.000000 seconds
+2025-06-15 22:57:28,233 - INFO - Retrying request to /chat/completions in 54.000000 seconds
+2025-06-15 22:58:29,334 - INFO - Retrying request to /chat/completions in 55.000000 seconds
+2025-06-15 22:59:29,388 - INFO - Retrying request to /chat/completions in 57.000000 seconds
+2025-06-15 23:00:35,045 - INFO - Retrying request to /chat/completions in 53.000000 seconds
+2025-06-15 23:01:37,784 - INFO - Retrying request to /chat/completions in 52.000000 seconds
+2025-06-15 23:02:38,871 - INFO - Retrying request to /chat/completions in 53.000000 seconds
+2025-06-15 23:03:40,506 - INFO - Retrying request to /chat/completions in 53.000000 seconds
+2025-06-15 23:21:32,424 - INFO - Init {'embedding_dim': 1536, 'metric': 'cosine', 'storage_file': './temp_test/vdb_entities.json'} 0 data
+2025-06-15 23:21:32,425 - INFO - Init {'embedding_dim': 1536, 'metric': 'cosine', 'storage_file': './temp_test/vdb_relationships.json'} 0 data
+2025-06-15 23:21:32,425 - INFO - Init {'embedding_dim': 1536, 'metric': 'cosine', 'storage_file': './temp_test/vdb_chunks.json'} 0 data
+2025-06-15 23:21:32,426 - INFO - Initializing PDFParserRAG with model: gpt-4o
+2025-06-15 23:21:32,430 - INFO - Starting PDF processing: ./FAQs.pdf
+2025-06-15 23:21:32,436 - INFO - PDF opened successfully. Total pages: 8
+2025-06-15 23:21:32,436 - INFO - Starting concurrent processing with 4 workers
+2025-06-15 23:21:33,094 - INFO - Processing page 1
+2025-06-15 23:21:35,029 - INFO - Sending page 1 to GPT-4 Vision model
+2025-06-15 23:21:35,039 - INFO - Processing page 2
+2025-06-15 23:21:37,016 - INFO - Sending page 2 to GPT-4 Vision model
+2025-06-15 23:21:37,028 - INFO - Processing page 3
+2025-06-15 23:21:38,983 - INFO - Sending page 3 to GPT-4 Vision model
+2025-06-15 23:21:38,993 - INFO - Processing page 4
+2025-06-15 23:21:41,033 - INFO - Sending page 4 to GPT-4 Vision model
+2025-06-15 23:21:41,043 - INFO - Processing page 5
+2025-06-15 23:21:43,065 - INFO - Sending page 5 to GPT-4 Vision model
+2025-06-15 23:21:43,075 - INFO - Processing page 6
+2025-06-15 23:21:45,003 - INFO - Sending page 6 to GPT-4 Vision model
+2025-06-15 23:21:45,012 - INFO - Processing page 7
+2025-06-15 23:21:46,950 - INFO - Sending page 7 to GPT-4 Vision model
+2025-06-15 23:21:46,959 - INFO - Processing page 8
+2025-06-15 23:21:48,464 - INFO - Retrying request to /chat/completions in 52.000000 seconds
+2025-06-15 23:21:48,685 - INFO - Sending page 8 to GPT-4 Vision model
+2025-06-15 23:21:48,691 - INFO - Page 2 processed successfully in 13.65 seconds
+2025-06-15 23:21:48,694 - INFO - Page 1 processed successfully in 15.60 seconds
+2025-06-15 23:21:50,116 - INFO - Retrying request to /chat/completions in 50.000000 seconds
+2025-06-15 23:21:50,248 - INFO - Retrying request to /chat/completions in 50.000000 seconds
+2025-06-15 23:21:50,260 - INFO - Page 3 processed successfully in 13.23 seconds
+2025-06-15 23:21:51,399 - INFO - Page 4 processed successfully in 12.41 seconds
+2025-06-15 23:21:53,141 - INFO - Page 5 processed successfully in 12.10 seconds
+2025-06-15 23:22:47,723 - INFO - Page 8 processed successfully in 60.76 seconds
+2025-06-15 23:22:49,357 - INFO - Page 7 processed successfully in 64.34 seconds
+2025-06-15 23:22:49,372 - INFO - Page 6 processed successfully in 66.30 seconds
+2025-06-15 23:22:49,387 - INFO - PDF processing completed in 76.96 seconds
+2025-06-15 23:22:49,387 - INFO - Successfully processed 8 out of 8 pages
+2025-06-15 23:22:52,430 - INFO - Retrying request to /chat/completions in 51.000000 seconds
+2025-06-15 23:23:51,408 - INFO - Retrying request to /chat/completions in 54.000000 seconds
+2025-06-15 23:24:52,951 - INFO - Retrying request to /chat/completions in 54.000000 seconds
+2025-06-15 23:35:47,755 - INFO - Retrying request to /chat/completions in 0.923775 seconds
+2025-06-15 23:36:02,918 - INFO - Retrying request to /chat/completions in 56.000000 seconds
+2025-06-15 23:37:12,833 - INFO - Retrying request to /chat/completions in 48.000000 seconds
+2025-06-15 23:38:11,820 - INFO - Retrying request to /chat/completions in 51.000000 seconds
+2025-06-15 23:39:17,118 - INFO - Retrying request to /chat/completions in 48.000000 seconds
+2025-06-15 23:40:21,925 - INFO - Retrying request to /chat/completions in 45.000000 seconds
+2025-06-15 23:41:14,075 - INFO - Retrying request to /chat/completions in 60.000000 seconds
+2025-06-15 23:42:15,502 - INFO - Retrying request to /chat/completions in 60.000000 seconds
