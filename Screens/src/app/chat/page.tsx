@@ -2,6 +2,8 @@
 
 import { FC, useState, useRef, useEffect } from 'react';
 import { Send, Upload, FileText, X, Bot, User, Calendar, Clock, Users, Check, X as XIcon, Brain, Search, CheckCircle, ChevronLeft, ChevronRight, MessageSquare, Plus } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface Message {
   id: string;
@@ -218,15 +220,21 @@ const ChatPage: FC = () => {
   };
 
   const handleDeleteChat = (chatId: string) => {
-    // Prevent event propagation to avoid triggering chat selection
-    event?.stopPropagation();
-    
     // Remove the chat from history
     setChatHistory((prev) => prev.filter((chat) => chat.id !== chatId));
-    
-    // If the deleted chat was selected, create a new chat
+
+    // If the deleted chat was selected, create a new chat (or leave none if others exist)
     if (selectedChatId === chatId) {
-      createNewChat();
+      if (chatHistory.length > 1) {
+        // select the next available chat
+        const remaining = chatHistory.filter((c) => c.id !== chatId);
+        if (remaining.length > 0) {
+          setSelectedChatId(remaining[0].id);
+        }
+      } else {
+        setSelectedChatId(null);
+        setMessages([]);
+      }
     }
   };
 
@@ -250,14 +258,14 @@ const ChatPage: FC = () => {
   };
 
   return (
-    <div className="h-[calc(100vh-4rem)] flex">
+    <div className="h-[calc(100vh-7rem)] flex overflow-hidden">
       {/* Chat History Sidebar */}
       <div
         className={`bg-white border-r border-gray-200 transition-all duration-300 ease-in-out ${
           isHistoryCollapsed ? 'w-16' : 'w-80'
-        }`}
+        } flex flex-col`}
       >
-        <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200">
+        <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200 flex-shrink-0">
           {!isHistoryCollapsed && (
             <h2 className="text-lg font-semibold text-gray-900">Chat History</h2>
           )}
@@ -272,337 +280,365 @@ const ChatPage: FC = () => {
             )}
           </button>
         </div>
-        <div className="p-4">
-          {!isHistoryCollapsed && (
-            <button 
-              onClick={createNewChat}
-              className="w-full flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            >
-              <Plus className="h-5 w-5 mr-2" />
-              New Chat
-            </button>
-          )}
-          <div className="mt-4 space-y-2">
-            {chatHistory.map((chat) => (
-              <div
-                key={chat.id}
-                className={`p-3 rounded-lg cursor-pointer transition-all duration-300 ease-in-out transform ${
-                  selectedChatId === chat.id 
-                    ? 'bg-blue-100 border border-blue-200 scale-[1.02]' 
-                    : chat.unread 
-                      ? 'bg-blue-50' 
-                      : 'hover:bg-gray-50'
-                }`}
-                onClick={() => handleChatSelect(chat.id)}
+        <div className="flex-1 overflow-hidden">
+          <div className="p-4 h-full flex flex-col">
+            {!isHistoryCollapsed && (
+              <button 
+                onClick={createNewChat}
+                className="w-full flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex-shrink-0"
               >
-                {isHistoryCollapsed ? (
-                  <MessageSquare className={`h-5 w-5 ${selectedChatId === chat.id ? 'text-blue-600' : 'text-gray-500'}`} />
-                ) : (
-                  <div className="flex items-center justify-between">
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between">
-                        <h3 className={`font-medium ${selectedChatId === chat.id ? 'text-blue-900' : 'text-gray-900'}`}>
-                          {chat.title}
-                        </h3>
-                        {chat.unread && (
-                          <span className="h-2 w-2 bg-blue-600 rounded-full" />
-                        )}
+                <Plus className="h-5 w-5 mr-2" />
+                New Chat
+              </button>
+            )}
+            <div className="mt-4 space-y-2 flex-1 overflow-y-auto">
+              {chatHistory.length === 0 && (
+                <div className="flex flex-col items-center justify-center text-center text-gray-500 py-8">
+                  <p>No chats available.</p>
+                  <button
+                    onClick={createNewChat}
+                    className="mt-2 inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  >
+                    <Plus className="h-4 w-4 mr-2" /> Create New Chat
+                  </button>
+                </div>
+              )}
+              {chatHistory.map((chat) => (
+                <div
+                  key={chat.id}
+                  className={`p-3 rounded-lg cursor-pointer transition-all duration-300 ease-in-out transform ${
+                    selectedChatId === chat.id 
+                      ? 'bg-blue-100 border border-blue-200 scale-[1.02]' 
+                      : chat.unread 
+                        ? 'bg-blue-50' 
+                        : 'hover:bg-gray-50'
+                  }`}
+                  onClick={() => handleChatSelect(chat.id)}
+                >
+                  {isHistoryCollapsed ? (
+                    <MessageSquare className={`h-5 w-5 ${selectedChatId === chat.id ? 'text-blue-600' : 'text-gray-500'}`} />
+                  ) : (
+                    <div className="flex items-center justify-between">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between">
+                          <h3 className={`font-medium truncate ${selectedChatId === chat.id ? 'text-blue-900' : 'text-gray-900'}`}>
+                            {chat.title}
+                          </h3>
+                          {chat.unread && (
+                            <span className="h-2 w-2 bg-blue-600 rounded-full" />
+                          )}
+                        </div>
+                        <p className={`text-sm mt-1 overflow-hidden text-ellipsis whitespace-nowrap break-all ${selectedChatId === chat.id ? 'text-blue-800' : 'text-gray-500'}`}>
+                          {chat.lastMessage || 'No messages yet'}
+                        </p>
+                        <p className={`text-xs mt-1 ${selectedChatId === chat.id ? 'text-blue-600' : 'text-gray-400'}`}>
+                          {chat.timestamp.toLocaleTimeString()}
+                        </p>
                       </div>
-                      <p className={`text-sm mt-1 truncate ${selectedChatId === chat.id ? 'text-blue-800' : 'text-gray-500'}`}>
-                        {chat.lastMessage || 'No messages yet'}
-                      </p>
-                      <p className={`text-xs mt-1 ${selectedChatId === chat.id ? 'text-blue-600' : 'text-gray-400'}`}>
-                        {chat.timestamp.toLocaleTimeString()}
-                      </p>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleDeleteChat(chat.id);
+                        }}
+                        className="ml-2 p-1 text-gray-400 hover:text-red-500 rounded-full hover:bg-gray-100 transition-colors duration-200"
+                        title="Delete chat"
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
                     </div>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleDeleteChat(chat.id);
-                      }}
-                      className="ml-2 p-1 text-gray-400 hover:text-red-500 rounded-full hover:bg-gray-100 transition-colors duration-200"
-                      title="Delete chat"
-                    >
-                      <X className="h-4 w-4" />
-                    </button>
-                  </div>
-                )}
-              </div>
-            ))}
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Main Chat Area */}
-      <div className="flex-1 flex flex-col">
-        {/* Messages Area - Scrollable */}
-        <div className="flex-1 overflow-y-auto">
-          <div className="p-4 space-y-4">
-            {messages.map((message, index) => (
-              <div
-                key={message.id}
-                className={`flex ${
-                  message.role === 'user' ? 'justify-end' : 'justify-start'
-                } animate-fade-in`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+      {selectedChatId ? (
+        <div className="flex-1 flex flex-col">
+          {/* Messages Area - Scrollable */}
+          <div className="flex-1 overflow-y-auto">
+            <div className="p-4 space-y-4">
+              {messages.map((message, index) => (
                 <div
-                  className={`max-w-2xl rounded-lg p-4 transition-all duration-300 ease-in-out transform ${
-                    message.role === 'user'
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-100 text-gray-900'
-                  }`}
+                  key={message.id}
+                  className={`flex ${
+                    message.role === 'user' ? 'justify-end' : 'justify-start'
+                  } animate-fade-in`}
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="flex items-center mb-2">
-                    {message.role === 'assistant' ? (
-                      <Bot className="h-5 w-5 mr-2" />
-                    ) : (
-                      <User className="h-5 w-5 mr-2" />
-                    )}
-                    <span className="font-medium">
-                      {message.role === 'assistant' ? 'Assistant' : 'You'}
-                    </span>
-                  </div>
-                  
-                  {message.type === 'text' && (
-                    <div className="space-y-3">
-                      <p className="whitespace-pre-wrap">{message.content}</p>
-                      {message.thoughtProcess && (
-                        <div className="mt-4 pt-4 border-t border-gray-200">
-                          <div className="flex items-center text-sm text-gray-500 mb-2">
-                            <Brain className="h-4 w-4 mr-2" />
-                            <span>AI Thought Process:</span>
-                          </div>
-                          <ul className="space-y-2 text-sm">
-                            {message.thoughtProcess.steps.map((step, index) => (
-                              <li key={index} className="flex items-start">
-                                <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5" />
-                                <span>{step}</span>
-                              </li>
-                            ))}
-                          </ul>
-                          {message.thoughtProcess.agents && (
-                            <div className="mt-4">
-                              <h4 className="text-sm font-medium text-gray-700 mb-2">Agents Used:</h4>
-                              <div className="space-y-2">
-                                {message.thoughtProcess.agents.map((agent, index) => (
-                                  <div key={index} className="flex items-start p-2 bg-gray-50 rounded-lg">
-                                    <div className="flex-1">
-                                      <div className="flex items-center">
-                                        <span className="font-medium text-gray-900">{agent.name}</span>
-                                        <span className={`ml-2 px-2 py-0.5 text-xs rounded-full ${
-                                          agent.status === 'success' ? 'bg-green-100 text-green-800' :
-                                          agent.status === 'error' ? 'bg-red-100 text-red-800' :
-                                          'bg-yellow-100 text-yellow-800'
-                                        }`}>
-                                          {agent.status}
-                                        </span>
-                                      </div>
-                                      <p className="text-sm text-gray-600 mt-1">{agent.role}</p>
-                                    </div>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-                          <div className="mt-3 text-sm font-medium text-gray-700">
-                            {message.thoughtProcess.conclusion}
-                          </div>
-                        </div>
+                  <div
+                    className={`max-w-2xl rounded-lg p-4 transition-all duration-300 ease-in-out transform ${
+                      message.role === 'user'
+                        ? 'bg-blue-600 text-white'
+                        : 'bg-gray-100 text-gray-900'
+                    }`}
+                  >
+                    <div className="flex items-center mb-2">
+                      {message.role === 'assistant' ? (
+                        <Bot className="h-5 w-5 mr-2" />
+                      ) : (
+                        <User className="h-5 w-5 mr-2" />
                       )}
+                      <span className="font-medium">
+                        {message.role === 'assistant' ? 'Assistant' : 'You'}
+                      </span>
                     </div>
-                  )}
-
-                  {message.type === 'thinking' && (
-                    <div className="space-y-3">
-                      <div className="flex items-center text-blue-600">
-                        <Brain className="h-5 w-5 mr-2 animate-pulse" />
-                        <span>Thinking...</span>
-                      </div>
-                      <div className="space-y-2">
-                        {message.thoughtProcess?.steps.map((step, index) => (
-                          <div key={index} className="flex items-center text-sm text-gray-600">
-                            <Search className="h-4 w-4 mr-2" />
-                            <span>{step}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {message.type === 'meeting_slots' && (
-                    <div className="space-y-4">
-                      <div className="space-y-3">
-                        <p className="whitespace-pre-wrap">{message.content}</p>
+                    
+                    {message.type === 'text' && (
+                      <div className="space-y-1">
+                        <div className="prose prose-sm leading-snug prose-p:my-1 prose-li:my-0 max-w-none whitespace-pre-wrap break-words">
+                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {message.content}
+                          </ReactMarkdown>
+                        </div>
                         {message.thoughtProcess && (
-                          <div className="bg-blue-50 rounded-lg p-3 text-sm">
-                            <div className="flex items-center text-blue-700 mb-2">
+                          <div className="mt-4 pt-4 border-t border-gray-200">
+                            <div className="flex items-center text-sm text-gray-500 mb-2">
                               <Brain className="h-4 w-4 mr-2" />
-                              <span>Analysis Process:</span>
+                              <span>AI Thought Process:</span>
                             </div>
-                            <ul className="space-y-1">
+                            <ul className="space-y-2 text-sm">
                               {message.thoughtProcess.steps.map((step, index) => (
                                 <li key={index} className="flex items-start">
-                                  <CheckCircle className="h-4 w-4 text-blue-500 mr-2 mt-0.5" />
-                                  <span className="text-blue-800">{step}</span>
+                                  <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5" />
+                                  <span>{step}</span>
                                 </li>
                               ))}
                             </ul>
-                            <div className="mt-2 text-blue-700 font-medium">
+                            {message.thoughtProcess.agents && (
+                              <div className="mt-4">
+                                <h4 className="text-sm font-medium text-gray-700 mb-2">Agents Used:</h4>
+                                <div className="space-y-2">
+                                  {message.thoughtProcess.agents.map((agent, index) => (
+                                    <div key={index} className="flex items-start p-2 bg-gray-50 rounded-lg">
+                                      <div className="flex-1">
+                                        <div className="flex items-center">
+                                          <span className="font-medium text-gray-900">{agent.name}</span>
+                                          <span className={`ml-2 px-2 py-0.5 text-xs rounded-full ${
+                                            agent.status === 'success' ? 'bg-green-100 text-green-800' :
+                                            agent.status === 'error' ? 'bg-red-100 text-red-800' :
+                                            'bg-yellow-100 text-yellow-800'
+                                          }`}>
+                                            {agent.status}
+                                          </span>
+                                        </div>
+                                        <p className="text-sm text-gray-600 mt-1">{agent.role}</p>
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                            <div className="mt-3 text-sm font-medium text-gray-700">
                               {message.thoughtProcess.conclusion}
                             </div>
                           </div>
                         )}
                       </div>
-                      <div className="space-y-3">
-                        {message.meetingSlots?.map((slot) => (
-                          <div
-                            key={slot.id}
-                            className="bg-white rounded-lg p-4 border border-gray-200"
-                          >
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center space-x-2">
-                                <Calendar className="h-5 w-5 text-blue-600" />
-                                <span className="font-medium">{slot.date}</span>
-                              </div>
-                              <div className="flex items-center space-x-2">
-                                <Clock className="h-4 w-4 text-gray-400" />
-                                <span className="text-sm text-gray-500">
-                                  {slot.time} ({slot.duration})
-                                </span>
-                              </div>
-                            </div>
-                            <div className="mt-3">
-                              <div className="flex items-center text-sm text-gray-500">
-                                <Users className="h-4 w-4 mr-2" />
-                                <span>
-                                  {slot.availableAttendees.length} attendees available
-                                </span>
-                              </div>
-                              <div className="mt-2 flex flex-wrap gap-2">
-                                {slot.availableAttendees.map((attendee) => (
-                                  <span
-                                    key={attendee}
-                                    className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
-                                  >
-                                    {attendee}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-                            <button 
-                              onClick={() => {
-                                const confirmationMessage: Message = {
-                                  id: Date.now().toString(),
-                                  content: `I've scheduled the meeting for ${slot.date} at ${slot.time} (${slot.duration}). I'll send calendar invites to all attendees.`,
-                                  role: 'assistant',
-                                  timestamp: new Date(),
-                                  type: 'confirmation',
-                                  selectedSlot: {
-                                    ...slot,
-                                    attendees: slot.availableAttendees,
-                                  },
-                                };
-                                setMessages((prev) => [...prev, confirmationMessage]);
-                              }}
-                              className="mt-3 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                            >
-                              Select Time Slot
-                            </button>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                    )}
 
-                  {message.type === 'confirmation' && message.selectedSlot && (
-                    <div className="bg-green-50 rounded-lg p-4">
-                      <div className="flex items-center text-green-700 mb-2">
-                        <Check className="h-5 w-5 mr-2" />
-                        <span className="font-medium">Meeting Scheduled!</span>
+                    {message.type === 'thinking' && (
+                      <div className="space-y-3">
+                        <div className="flex items-center text-blue-600">
+                          <Brain className="h-5 w-5 mr-2 animate-pulse" />
+                          <span>Thinking...</span>
+                        </div>
+                        <div className="space-y-2">
+                          {message.thoughtProcess?.steps.map((step, index) => (
+                            <div key={index} className="flex items-center text-sm text-gray-600">
+                              <Search className="h-4 w-4 mr-2" />
+                              <span>{step}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
+                    )}
+
+                    {message.type === 'meeting_slots' && (
                       <div className="space-y-2">
-                        <p className="text-sm text-green-800">
-                          Date: {message.selectedSlot.date}
-                        </p>
-                        <p className="text-sm text-green-800">
-                          Time: {message.selectedSlot.time} ({message.selectedSlot.duration})
-                        </p>
-                        <div className="mt-2">
-                          <p className="text-sm font-medium text-green-800">Attendees:</p>
-                          <div className="mt-1 flex flex-wrap gap-2">
-                            {message.selectedSlot.attendees.map((attendee) => (
-                              <span
-                                key={attendee}
-                                className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full"
+                        <div className="space-y-3">
+                          <div className="prose prose-sm leading-snug prose-p:my-1 prose-li:my-0 max-w-none whitespace-pre-wrap break-words">
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                              {message.content}
+                            </ReactMarkdown>
+                          </div>
+                          {message.thoughtProcess && (
+                            <div className="bg-blue-50 rounded-lg p-3 text-sm">
+                              <div className="flex items-center text-blue-700 mb-2">
+                                <Brain className="h-4 w-4 mr-2" />
+                                <span>Analysis Process:</span>
+                              </div>
+                              <ul className="space-y-1">
+                                {message.thoughtProcess.steps.map((step, index) => (
+                                  <li key={index} className="flex items-start">
+                                    <CheckCircle className="h-4 w-4 text-blue-500 mr-2 mt-0.5" />
+                                    <span className="text-blue-800">{step}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                              <div className="mt-2 text-blue-700 font-medium">
+                                {message.thoughtProcess.conclusion}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                        <div className="space-y-3">
+                          {message.meetingSlots?.map((slot) => (
+                            <div
+                              key={slot.id}
+                              className="bg-white rounded-lg p-4 border border-gray-200"
+                            >
+                              <div className="flex items-center justify-between">
+                                <div className="flex items-center space-x-2">
+                                  <Calendar className="h-5 w-5 text-blue-600" />
+                                  <span className="font-medium">{slot.date}</span>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                  <Clock className="h-4 w-4 text-gray-400" />
+                                  <span className="text-sm text-gray-500">
+                                    {slot.time} ({slot.duration})
+                                  </span>
+                                </div>
+                              </div>
+                              <div className="mt-3">
+                                <div className="flex items-center text-sm text-gray-500">
+                                  <Users className="h-4 w-4 mr-2" />
+                                  <span>
+                                    {slot.availableAttendees.length} attendees available
+                                  </span>
+                                </div>
+                                <div className="mt-2 flex flex-wrap gap-2">
+                                  {slot.availableAttendees.map((attendee) => (
+                                    <span
+                                      key={attendee}
+                                      className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
+                                    >
+                                      {attendee}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                              <button 
+                                onClick={() => {
+                                  const confirmationMessage: Message = {
+                                    id: Date.now().toString(),
+                                    content: `I've scheduled the meeting for ${slot.date} at ${slot.time} (${slot.duration}). I'll send calendar invites to all attendees.`,
+                                    role: 'assistant',
+                                    timestamp: new Date(),
+                                    type: 'confirmation',
+                                    selectedSlot: {
+                                      ...slot,
+                                      attendees: slot.availableAttendees,
+                                    },
+                                  };
+                                  setMessages((prev) => [...prev, confirmationMessage]);
+                                }}
+                                className="mt-3 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                               >
-                                {attendee}
-                              </span>
-                            ))}
+                                Select Time Slot
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {message.type === 'confirmation' && message.selectedSlot && (
+                      <div className="bg-green-50 rounded-lg p-4">
+                        <div className="flex items-center text-green-700 mb-2">
+                          <Check className="h-5 w-5 mr-2" />
+                          <span className="font-medium">Meeting Scheduled!</span>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="text-sm text-green-800">
+                            Date: {message.selectedSlot.date}
+                          </p>
+                          <p className="text-sm text-green-800">
+                            Time: {message.selectedSlot.time} ({message.selectedSlot.duration})
+                          </p>
+                          <div className="mt-2">
+                            <p className="text-sm font-medium text-green-800">Attendees:</p>
+                            <div className="mt-1 flex flex-wrap gap-2">
+                              {message.selectedSlot.attendees.map((attendee) => (
+                                <span
+                                  key={attendee}
+                                  className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full"
+                                >
+                                  {attendee}
+                                </span>
+                              ))}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-            <div ref={messagesEndRef} />
-          </div>
-        </div>
-
-        {/* File Uploads */}
-        {uploadedFiles.length > 0 && (
-          <div className="bg-white border-t border-gray-200 p-4">
-            <div className="flex flex-wrap gap-2">
-              {uploadedFiles.map((file, index) => (
-                <div
-                  key={index}
-                  className="flex items-center space-x-2 bg-gray-100 rounded-lg px-3 py-1"
-                >
-                  <FileText className="h-4 w-4 text-gray-500" />
-                  <span className="text-sm text-gray-700">{file.name}</span>
-                  <button
-                    onClick={() => handleRemoveFile(index)}
-                    className="text-gray-500 hover:text-gray-700"
-                  >
-                    <X className="h-4 w-4" />
-                  </button>
+                    )}
+                  </div>
                 </div>
               ))}
+              <div ref={messagesEndRef} />
             </div>
           </div>
-        )}
 
-        {/* Input Area */}
-        <div className="bg-white border-t border-gray-200 p-4">
-          <div className="flex items-center space-x-4">
-            <label className="cursor-pointer">
+          {/* File Uploads */}
+          {uploadedFiles.length > 0 && (
+            <div className="bg-white border-t border-gray-200 p-4">
+              <div className="flex flex-wrap gap-2">
+                {uploadedFiles.map((file, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center space-x-2 bg-gray-100 rounded-lg px-3 py-1"
+                  >
+                    <FileText className="h-4 w-4 text-gray-500" />
+                    <span className="text-sm text-gray-700">{file.name}</span>
+                    <button
+                      onClick={() => handleRemoveFile(index)}
+                      className="text-gray-500 hover:text-gray-700"
+                    >
+                      <X className="h-4 w-4" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Input Area */}
+          <div className="bg-white border-t border-gray-200 p-4">
+            <div className="flex items-center space-x-4">
+              <label className="cursor-pointer">
+                <input
+                  type="file"
+                  multiple
+                  onChange={handleFileUpload}
+                  className="hidden"
+                />
+                <Upload className="h-5 w-5 text-gray-500 hover:text-gray-700" />
+              </label>
               <input
-                type="file"
-                multiple
-                onChange={handleFileUpload}
-                className="hidden"
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                placeholder={selectedChatId === null ? "Try typing something like 'I need to schedule a meeting with the team to discuss the Q2 roadmap.'" : "Type your message..."}
+                className="flex-1 border border-gray-300 rounded-lg px-4 py-3 h-12 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500"
               />
-              <Upload className="h-5 w-5 text-gray-500 hover:text-gray-700" />
-            </label>
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-              placeholder={selectedChatId === null ? "Try typing something like 'I need to schedule a meeting with the team to discuss the Q2 roadmap.'" : "Type your message..."}
-              className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500"
-            />
-            <button
-              onClick={handleSend}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            >
-              <Send className="h-5 w-5" />
-            </button>
+              <button
+                onClick={handleSend}
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                <Send className="h-5 w-5" />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        // Placeholder when no chat is selected/available
+        <div className="flex-1 flex items-center justify-center text-gray-500">
+          <p>Select or create a chat to start messaging.</p>
+        </div>
+      )}
     </div>
   );
 };

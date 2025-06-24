@@ -17,18 +17,6 @@ class Config:
     similarity_threshold: float = float(os.getenv("SIMILARITY_THRESHOLD", "0.7"))
     model_name: str = os.getenv("MODEL_NAME", "gpt-4o")
 
-# # Dummy RAG Agent for testing
-# class RAGAgent:
-#     def __init__(self, config: Config):
-#         self.config = config
-#         self.knowledge_base = ["dummy document 1", "dummy document 2"]  # Dummy knowledge base
-    
-#     def process(self, query: str) -> Dict[str, Any]:
-#         return {
-#             "success": True,
-#             "context": "This is a dummy response from the RAG agent. The query was: " + query,
-#             "message": "Successfully retrieved information from knowledge base"
-#         }
 
 import os
 import asyncio

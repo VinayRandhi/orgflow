@@ -33,6 +33,7 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+__pycache__/
 # vercel
 .vercel
 
@@ -43,7 +44,8 @@ test.ipynb
 FAQs.pdf
 lightrag.log
 rag_storage
-
+test.py
+test.ipynb
 
 node_modules/
 Screens/node_modules/

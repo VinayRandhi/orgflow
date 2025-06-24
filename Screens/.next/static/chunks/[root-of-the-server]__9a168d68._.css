@@ -184,6 +184,7 @@
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
+    --leading-snug: 1.375;
     --radius-md: .375rem;
     --radius-lg: .5rem;
     --ease-out: cubic-bezier(0, 0, .2, 1);
@@ -473,6 +474,10 @@
     margin-right: calc(var(--spacing) * 3);
   }
 
+  .mb-1 {
+    margin-bottom: calc(var(--spacing) * 1);
+  }
+
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
   }
@@ -499,6 +504,10 @@
 
   .ml-3 {
     margin-left: calc(var(--spacing) * 3);
+  }
+
+  .ml-5 {
+    margin-left: calc(var(--spacing) * 5);
   }
 
   .ml-16 {
@@ -557,6 +566,10 @@
     height: calc(var(--spacing) * 10);
   }
 
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
+
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
@@ -569,8 +582,16 @@
     height: calc(100vh - 4rem);
   }
 
+  .h-\[calc\(100vh-7rem\)\] {
+    height: calc(100vh - 7rem);
+  }
+
   .h-full {
     height: 100%;
+  }
+
+  .max-h-full {
+    max-height: 100%;
   }
 
   .min-h-\[600px\] {
@@ -637,8 +658,16 @@
     max-width: var(--container-7xl);
   }
 
+  .max-w-none {
+    max-width: none;
+  }
+
   .max-w-xs {
     max-width: var(--container-xs);
+  }
+
+  .min-w-0 {
+    min-width: calc(var(--spacing) * 0);
   }
 
   .flex-1 {
@@ -647,6 +676,10 @@
 
   .flex-shrink-0 {
     flex-shrink: 0;
+  }
+
+  .origin-left {
+    transform-origin: 0;
   }
 
   .translate-x-0 {
@@ -675,6 +708,10 @@
     scale: 1.02;
   }
 
+  .-rotate-90 {
+    rotate: -90deg;
+  }
+
   .transform {
     transform: var(--tw-rotate-x, ) var(--tw-rotate-y, ) var(--tw-rotate-z, ) var(--tw-skew-x, ) var(--tw-skew-y, );
   }
@@ -685,6 +722,14 @@
 
   .cursor-pointer {
     cursor: pointer;
+  }
+
+  .list-decimal {
+    list-style-type: decimal;
+  }
+
+  .list-disc {
+    list-style-type: disc;
   }
 
   .grid-cols-1 {
@@ -1009,6 +1054,10 @@
     padding-block: calc(var(--spacing) * 2);
   }
 
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
   }
@@ -1019,6 +1068,10 @@
 
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
+  }
+
+  .py-8 {
+    padding-block: calc(var(--spacing) * 8);
   }
 
   .pt-4 {
@@ -1039,6 +1092,10 @@
 
   .pl-10 {
     padding-left: calc(var(--spacing) * 10);
+  }
+
+  .text-center {
+    text-align: center;
   }
 
   .text-2xl {
@@ -1076,6 +1133,10 @@
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
 
+  .text-\[10px\] {
+    font-size: 10px;
+  }
+
   .leading-5 {
     --tw-leading: calc(var(--spacing) * 5);
     line-height: calc(var(--spacing) * 5);
@@ -1091,6 +1152,11 @@
     line-height: calc(var(--spacing) * 7);
   }
 
+  .leading-snug {
+    --tw-leading: var(--leading-snug);
+    line-height: var(--leading-snug);
+  }
+
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -1104,6 +1170,22 @@
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+
+  .break-words {
+    overflow-wrap: break-word;
+  }
+
+  .break-all {
+    word-break: break-all;
+  }
+
+  .text-ellipsis {
+    text-overflow: ellipsis;
+  }
+
+  .whitespace-nowrap {
+    white-space: nowrap;
   }
 
   .whitespace-pre-wrap {

@@ -11,7 +11,10 @@ export async function POST(request: Request) {
       );
     }
 
-    const response = await fetch('http://localhost:8000/api/chat', {
+    // Construct backend URL – use env var if set, otherwise fallback to default
+    const backendUrl = process.env.ROUTER_API_URL || 'http://localhost:8002/api/chat';
+
+    const response = await fetch(backendUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
