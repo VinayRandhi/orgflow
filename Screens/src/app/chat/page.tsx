@@ -165,11 +165,11 @@ const ChatPage: FC = () => {
         type: 'text',
         thoughtProcess: {
           steps: [
-            `Query classified as: ${result.agent_types.join(', ')}`,
-            `Processed by: ${result.agents_used.join(', ')}`,
-            `Response generated successfully`
+            // `Query classified as: ${result.agent_types.join(', ')}`,
+            // `Processed by: ${result.agents_used.join(', ')}`,
+            // `Response generated successfully`
           ],
-          conclusion: `Successfully processed your request using ${result.agents_used.join(', ')}`,
+          conclusion: `Successfully processed your request using ${Array.from(new Set(result.agents_used)).join(', ')}`,
           agents: result.agent_results.map((agent: { agent_name: string; agent_type: string; result: { success: boolean } }) => ({
             name: agent.agent_name,
             type: agent.agent_type,
@@ -365,33 +365,32 @@ const ChatPage: FC = () => {
                   key={message.id}
                   className={`flex ${
                     message.role === 'user' ? 'justify-end' : 'justify-start'
-                  } animate-fade-in`}
+                  } animate-fade-in mb-4`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div
-                    className={`max-w-2xl rounded-lg p-4 transition-all duration-300 ease-in-out transform ${
+                    className={`max-w-2xl p-5 rounded-2xl transition-all duration-300 ease-in-out transform shadow-sm font-sans text-[1.08rem] leading-relaxed ${
                       message.role === 'user'
-                        ? 'bg-blue-600 text-white'
-                        : 'bg-gray-100 text-gray-900'
+                        ? 'bg-blue-600 text-white rounded-br-md rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl'
+                        : 'bg-white text-gray-800 border border-gray-200 shadow-md rounded-bl-md rounded-tl-2xl rounded-tr-2xl rounded-br-2xl'
                     }`}
+                    style={{ minWidth: '120px' }}
                   >
                     <div className="flex items-center mb-2">
                       {message.role === 'assistant' ? (
-                        <Bot className="h-5 w-5 mr-2" />
+                        <Bot className="h-5 w-5 mr-2 text-green-600" />
                       ) : (
-                        <User className="h-5 w-5 mr-2" />
+                        <User className="h-5 w-5 mr-2 text-blue-200" />
                       )}
-                      <span className="font-medium">
+                      <span className={`font-bold ${message.role === 'assistant' ? 'text-lg text-gray-900' : 'text-base text-white'}`}>
                         {message.role === 'assistant' ? 'Assistant' : 'You'}
                       </span>
                     </div>
                     
                     {message.type === 'text' && (
                       <div className="space-y-1">
-                        <div className="prose prose-sm leading-snug prose-p:my-1 prose-li:my-0 max-w-none whitespace-pre-wrap break-words">
-                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                            {message.content}
-                          </ReactMarkdown>
+                        <div className="whitespace-pre-wrap break-words font-sans text-[1.08rem] leading-relaxed" style={{fontWeight: 400}}>
+                          {message.content}
                         </div>
                         {message.thoughtProcess && (
                           <div className="mt-4 pt-4 border-t border-gray-200">
@@ -411,7 +410,7 @@ const ChatPage: FC = () => {
                               <div className="mt-4">
                                 <h4 className="text-sm font-medium text-gray-700 mb-2">Agents Used:</h4>
                                 <div className="space-y-2">
-                                  {message.thoughtProcess.agents.map((agent, index) => (
+                                  {Array.from(new Map(message.thoughtProcess.agents.map(agent => [agent.name, agent])).values()).map((agent, index) => (
                                     <div key={index} className="flex items-start p-2 bg-gray-50 rounded-lg">
                                       <div className="flex-1">
                                         <div className="flex items-center">
